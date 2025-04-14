@@ -55,8 +55,6 @@ check_service() {
     return 0
 }
 
-
-
 # 检查压缩包是否存在并且可读
 check_archive() {
     local archive_file=$1

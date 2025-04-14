@@ -5,18 +5,33 @@ source $(dirname "$0")/logger.sh
 source $(dirname "$0")/check_utils.sh
 source $(dirname "$0")/utils.sh
 
-# 定义测试用例
-test_cases=(
-    "extract_archive"
-)
+source $(dirname "$0")/test/test_check_archive_unchanged.sh
+source $(dirname "$0")/test/test_convert_filename_to_image.sh
 
-tmp_dir=/tmp/$(basename $1 .tar.gz)-$(date +%s)
-
-# 运行测试用例
-for test_case in "${test_cases[@]}"; do
-    if "$test_case" $1 $tmp_dir; then
-        log_info "$test_case 测试通过"
-    else
-        log_error "$test_case 测试失败"
+# 运行所有测试
+run_all_tests() {
+    local failed=0
+    
+    log_info "开始执行所有测试..."
+    
+    # 测试 convert_filename_to_image
+    if ! test_convert_filename_to_image; then
+        ((failed++))
     fi
-done
+    
+    # 测试 check_archive_unchanged
+    if ! test_check_archive_unchanged; then
+        ((failed++))
+    fi
+    
+    if [ $failed -eq 0 ]; then
+        log_info "所有测试用例通过!"
+        return 0
+    else
+        log_error "存在 $failed 个测试套件失败"
+        return 1
+    fi
+}
+
+# 执行测试
+run_all_tests

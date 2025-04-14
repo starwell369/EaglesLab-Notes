@@ -23,11 +23,23 @@ fi
 
 log_info "开始处理镜像压缩包..."
 
-# 解压压缩包
+# 设置解压相关变量
 tmp_name=$(basename $1 .tar.gz)
-tmp_dir=/tmp/$tmp_name-$(date +%s)
-extract_archive "$1" "$tmp_dir" || exit 1
-extract_dir=$tmp_dir/$tmp_name
+hash_file="/tmp/.image_archive_hash"
+extract_base_dir="/tmp/$tmp_name-latest"
+extract_dir="$extract_base_dir/$tmp_name"
+
+# 检查压缩包是否需要解压
+check_archive_unchanged "$1" "$hash_file" "$extract_base_dir"
+case $? in
+    0)  # 压缩包未变更，无需解压
+        ;;
+    1)  # 解压失败
+        exit 1
+        ;;
+    2)  # 解压成功
+        ;;
+esac
 
 # 统计总文件数
 total_files=$(find "$extract_dir" -type f -name "*.tar" | wc -l)
@@ -41,8 +53,8 @@ current_file=0
 while IFS= read -r image; do
     if [ -f "$image" ]; then
         ((current_file++))
-        # 从文件名提取镜像名称和标签
-        image_name_tag=$(basename "$image" .tar | sed 's/__/:/g')
+        # 使用新函数转换镜像名称
+        image_name_tag=$(convert_filename_to_image "$image")
         
         # 检查镜像是否已存在
         if docker inspect --type=image "$image_name_tag" >/dev/null 2>&1; then
@@ -50,12 +62,12 @@ while IFS= read -r image; do
             continue
         fi
         
-        log_info "正在加载镜像 ($current_file/$total_files): $(basename "$image")"
+        log_info "正在加载镜像 ($current_file/$total_files): $image_name_tag"
         
         if docker load < "$image"; then
-            log_info "✓ 成功加载镜像: $(basename "$image")"
+            log_info "✓ 成功加载镜像: $image_name_tag"
         else
-            log_error "✗ 加载失败: $(basename "$image")"
+            log_error "✗ 加载失败: $image_name_tag"
         fi
     fi
 done < <(find "$extract_dir" -type f -name "*.tar")

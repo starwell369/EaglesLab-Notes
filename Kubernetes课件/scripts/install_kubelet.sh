@@ -53,11 +53,23 @@ if [ ! -f "$KUBE_REPO_FILE" ]; then
     exit 1
 fi
 
-# 解压压缩包
+# 设置解压相关变量
 tmp_name=$(basename $1 .tar.gz)
-tmp_dir=/tmp/$tmp_name-$(date +%s)
-extract_archive "$1" "$tmp_dir" || exit 1
-extract_dir=$tmp_dir/$tmp_name
+hash_file="/tmp/.kubernetes-1.29.2-150500.1.1_archive_hash"
+extract_base_dir="/tmp/$tmp_name-latest"
+extract_dir="$extract_base_dir/$tmp_name"
+
+# 检查压缩包是否需要解压
+check_archive_unchanged "$1" "$hash_file" "$extract_base_dir"
+case $? in
+    0)  # 压缩包未变更，无需解压
+        ;;
+    1)  # 解压失败
+        exit 1
+        ;;
+    2)  # 解压成功
+        ;;
+esac
 
 # 安装本地RPM包
 if ! yum localinstall -y ${extract_dir}/*.rpm; then
