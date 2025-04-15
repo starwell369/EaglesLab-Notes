@@ -29,5 +29,5 @@ jobs:
 
       - name: Deploy to Servers
         run: |
-          sudo apt-get install -y jq  # 安装 JSON 解析工具
+          sudo apt-get install -y jq
           ./scripts/deploy.sh
