@@ -1,0 +1,33 @@
+name: Deploy Notes
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 14.x
+
+      - name: Install GitBook
+        run: npm install -g gitbook-cli
+
+      - name: Build Books
+        run: ./scripts/build.sh
+
+      - name: Setup SSH Key
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
+
+      - name: Deploy to Servers
+        run: |
+          sudo apt-get install -y jq  # 安装 JSON 解析工具
+          ./scripts/deploy.sh

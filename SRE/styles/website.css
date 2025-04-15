@@ -1,0 +1,52 @@
+.gitbook-link {
+    display: none!important;
+}
+
+.fa-align-justify:before {
+    content: "\f039\00A0\00A0"!important;
+}
+
+.fa-align-justify::after {
+    content: "菜单栏"!important;
+}
+
+@media screen and (max-width: 768px){
+    .fa-angle-left:before {
+        content: "上一页"!important;
+        font-size: 20px;
+        border: 1px solid #2E6DA4;
+        color: white;
+        box-shadow: 2px 2px 2px #000;
+        background: #337AB7;
+        border-radius: 6px;
+        padding: 5px;
+    }
+    
+    .fa-angle-right:before {
+        content: "下一页"!important;
+        font-size: 20px;
+        border: 1px solid #2E6DA4;
+        color: white;
+        box-shadow: 2px 2px 2px #000;
+        background: #337AB7;
+        border-radius: 6px;
+        padding: 5px;
+    }
+    .fa-align-justify {
+        font-size: 18px;
+        border: 1px solid #2E6DA4;
+        color: white;
+        box-shadow: 2px 2px 2px #000;
+        background: #337AB7;
+        border-radius: 6px;
+        padding: 5px;
+    }
+    .fa-align-justify::after{
+        font-size: 15px;
+        line-height: 19px;
+        vertical-align: middle;
+    }
+    .footer-modification {
+        float: left!important;
+    }
+}
