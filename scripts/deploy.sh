@@ -16,19 +16,21 @@ setup_ssh_key() {
     local host=$1
     local known_hosts="$HOME/.ssh/known_hosts"
     
-    # Create .ssh directory if it doesn't exist
+    # Create .ssh directory and config if they don't exist
     mkdir -p "$HOME/.ssh"
+    touch "$HOME/.ssh/config"
+    chmod 600 "$HOME/.ssh/config"
     
-    # Remove old key if exists
-    ssh-keygen -R "$host" 2>/dev/null
+    # Configure SSH to not check host keys for this deployment
+    echo -e "Host $host\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile /dev/null" >> "$HOME/.ssh/config"
     
-    # Add new host key
-    ssh-keyscan -H "$host" >> "$known_hosts" 2>/dev/null
-    
-    if [ $? -ne 0 ]; then
-        echo "Error: Failed to get host key for $host"
+    # Test SSH connection
+    if ! ssh -q -o BatchMode=yes -o ConnectTimeout=5 "$host" exit 2>/dev/null; then
+        echo "Error: Could not establish SSH connection to $host"
         return 1
     fi
+    
+    return 0
 }
 
 for course in "${COURSES[@]}"; do
@@ -50,12 +52,13 @@ for course in "${COURSES[@]}"; do
         continue
     fi
 
-    # Synchronize files
+    # Synchronize files with improved error handling
     echo "Deploying $course to $host..."
     if ! rsync -avz --delete \
+        -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" \
         "dist/$course/" \
-        "$user@$host:$path"; then
-        echo "Error: Failed to deploy $course to $host"
+        "$user@$host:$path" 2>&1; then
+        echo "Error: Failed to deploy $course to $host. Please check SSH connection and permissions."
         continue
     fi
 
