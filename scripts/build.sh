@@ -70,8 +70,8 @@ changed_courses=$(get_changed_directories)
 # 构建每个变更的目录
 for course in $changed_courses; do
     if [ -n "$course" ]; then
-        # build_course "$course"
-        echo "build_course $course"
+        build_course "$course"
+        # echo "build_course $course"
     fi
 done
 
