@@ -52,7 +52,7 @@ for course in "${COURSES[@]}"; do
 
     # Synchronize files
     echo "Deploying $course to $host..."
-    if ! rsync -avz --delete \
+    if ! rsync -avz --checksum --delete \
         "dist/$course/" \
         "$user@$host:$path"; then
         echo "Error: Failed to deploy $course to $host"
