@@ -1,17 +1,27 @@
 {
-    "SRE": {
-      "host": "110.42.41.82",
-      "user": "root",
-      "path": "/opt/1panel/apps/openresty/openresty/www/sites/ncloud.eagleslab.com/index/_book"
-    },
-    "Java": {
-      "host": "java.example.com",
-      "user": "deploy",
-      "path": "/opt/docs/java"
-    },
-    "Security": {
-      "host": "security.example.com",
-      "user": "deploy",
-      "path": "/home/docs/security"
-    }
+	"build": {
+		"force": true,
+		"ignore_changes": false
+	},
+	"SRE": {
+    	"host": "110.42.41.82",
+    	"port": 22,
+    	"user": "root",
+    	"path": "/opt/1panel/apps/openresty/openresty/www/sites/ncloud.eagleslab.com/index/_book",
+    	"enabled": true
+	},
+  "Java": {
+		"host": "java.example.com",
+		"port": 22,
+		"user": "deploy",
+		"path": "/opt/docs/java",
+		"enabled": false
+	},
+  "Security": {
+		"host": "security.example.com",
+		"port": 22,
+		"user": "deploy",
+		"path": "/home/docs/security",
+		"enabled": false
+	}
 }
