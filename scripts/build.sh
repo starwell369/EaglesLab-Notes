@@ -17,29 +17,34 @@ rm -rf dist
 mkdir -p dist
 
 # 获取变更的目录
-get_changed_directories() {
+get_changed_directories(){
+    local changed_dirs
+    
     # 如果配置了强制构建，返回所有包含 SUMMARY.md 的目录
     if [ "$FORCE_BUILD" = "true" ]; then
-        echo "Force build enabled, building all courses..."
-        find . -name "SUMMARY.md" -exec dirname {} \; | cut -d'/' -f2
+        echo "Force build enabled, building all courses..." >&2
+        changed_dirs=$(find . -name "SUMMARY.md" -exec dirname {} \; | cut -d'/' -f2)
+        echo "$changed_dirs"
         return
     fi
     
     # 如果配置了忽略变更，也返回所有目录
     if [ "$IGNORE_CHANGES" = "true" ]; then
-        echo "Ignore changes enabled, building all courses..."
-        find . -name "SUMMARY.md" -exec dirname {} \; | cut -d'/' -f2
+        echo "Ignore changes enabled, building all courses..." >&2
+        changed_dirs=$(find . -name "SUMMARY.md" -exec dirname {} \; | cut -d'/' -f2)
+        echo "$changed_dirs"
         return
     fi
 
     # 检查是否在 CI 环境中
     if [ -n "$GITHUB_SHA" ]; then
-        echo "In CI environment, checking changed files..."
-        git diff --name-only ${{ github.event.before }} $GITHUB_SHA | cut -d'/' -f1 | sort -u
+        echo "In CI environment, checking changed files..." >&2
+        changed_dirs=$(git diff --name-only ${{ github.event.before }} $GITHUB_SHA | cut -d'/' -f1 | sort -u)
     else
-        echo "In local environment, building all courses with SUMMARY.md..."
-        find . -name "SUMMARY.md" -exec dirname {} \; | cut -d'/' -f2
+        echo "In local environment, building all courses with SUMMARY.md..." >&2
+        changed_dirs=$(find . -name "SUMMARY.md" -exec dirname {} \; | cut -d'/' -f2)
     fi
+    echo "$changed_dirs"
 }
 
 
@@ -65,7 +70,8 @@ changed_courses=$(get_changed_directories)
 # 构建每个变更的目录
 for course in $changed_courses; do
     if [ -n "$course" ]; then
-        build_course "$course"
+        # build_course "$course"
+        echo "build_course $course"
     fi
 done
 
