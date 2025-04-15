@@ -36,7 +36,7 @@ get_changed_directories(){
         return
     fi
 
-    # Check if in CI environment
+    # 检查是否在 CI 环境中
     if [ -n "$GITHUB_SHA" ]; then
         echo "In CI environment, checking changed files..." >&2
         changed_dirs=$(git diff --name-only "$BEFORE_SHA" "$GITHUB_SHA" | cut -d'/' -f1 | sort -u)
