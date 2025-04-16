@@ -1,0 +1,9 @@
+# GitBook generated files
+_book/
+
+# System files
+.DS_Store
+
+# IDE files
+.idea/
+.vscode/
