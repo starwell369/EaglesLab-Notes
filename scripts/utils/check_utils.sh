@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # 导入日志模块
-source $(dirname "$0")/logger.sh
+ROOT_DIR=$(cd "$(dirname "$0")/.." && pwd)
+source "${ROOT_DIR}/logger.sh"
 
 # 检查命令是否存在
 check_command() {
