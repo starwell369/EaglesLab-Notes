@@ -49,11 +49,11 @@ spec:
       volumes:
       - name: html
         nfs:
-          server: 10.3.203.100
+          server: 10.3.204.100
           path: /root/data/nfs/html
       - name: config
         nfs:
-          server: 10.3.203.100
+          server: 10.3.204.100
           path: /root/data/nfs/nginx
 
 ---
