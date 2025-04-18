@@ -1,10 +1,11 @@
 #!/bin/bash
 
+CURRENT_DIR=$(dirname "$0")
+ROOT_DIR=$(cd "$CURRENT_DIR/.." && pwd)
+
 # 导入日志和工具模块
-SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
-ROOT_DIR=$(cd "${SCRIPT_DIR}/.." && pwd)
-source "${ROOT_DIR}/logger.sh"
-source "${ROOT_DIR}/utils/check_utils.sh"
+source $ROOT_DIR/logger.sh
+source $ROOT_DIR/utils/check_utils.sh
 
 # 默认配置
 REGISTRY_PORT=5000

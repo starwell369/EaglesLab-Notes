@@ -1,7 +1,10 @@
 #!/bin/bash
 
+CURRENT_DIR=$(dirname "$0")
+ROOT_DIR=$(cd "$CURRENT_DIR/.." && pwd)
+
 # 导入日志模块
-source $(dirname "$0")/logger.sh
+source $ROOT_DIR/logger.sh
 
 # 检查并安装软件包
 install_package() {

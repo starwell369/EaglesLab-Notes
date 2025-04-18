@@ -1,9 +1,12 @@
 #!/bin/bash
 
-# 导入日志和检查模块
-source $(dirname "$0")/logger.sh
-source $(dirname "$0")/check_utils.sh
-source $(dirname "$0")/config.conf
+CURRENT_DIR=$(dirname "$0")
+ROOT_DIR=$(cd "$CURRENT_DIR/.." && pwd)
+
+# 导入日志模块和检查工具模块
+source $ROOT_DIR/logger.sh
+source $ROOT_DIR/utils/check_utils.sh
+source $ROOT_DIR/utils/utils.sh
 
 # 定义安装步骤数组
 STEPS=(

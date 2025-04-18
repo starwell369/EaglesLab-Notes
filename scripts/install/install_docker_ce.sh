@@ -1,9 +1,14 @@
 #!/bin/bash
 
+CURRENT_DIR=$(dirname "$0")
+ROOT_DIR=$(cd "$CURRENT_DIR/.." && pwd)
+
 # 导入日志模块和检查工具模块
-source $(dirname "$0")/../logger.sh
-source $(dirname "$0")/../uitls/check_utils.sh
-source $(dirname "$0")/../uitls/utils.sh
+source $ROOT_DIR/logger.sh
+source $ROOT_DIR/utils/check_utils.sh
+source $ROOT_DIR/utils/utils.sh
+
+exit 0
 
 # 主要安装流程
 log_info "开始安装Docker CE"
