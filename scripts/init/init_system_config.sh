@@ -1,9 +1,12 @@
 #!/bin/bash
 
+CURRENT_DIR=$(dirname "$0")
+ROOT_DIR=$(cd "$CURRENT_DIR/.." && pwd)
+
 # 导入日志模块和检查工具模块
-source $(dirname "$0")/logger.sh
-source $(dirname "$0")/check_utils.sh
-source $(dirname "$0")/utils.sh
+source $ROOT_DIR/logger.sh
+source $ROOT_DIR/utils/check_utils.sh
+source $ROOT_DIR/utils/utils.sh
 
 # Rocky 系统软件源更换
 if ! grep -q "mirrors.aliyun.com" /etc/yum.repos.d/[Rr]ocky*.repo; then

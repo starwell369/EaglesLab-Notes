@@ -1,21 +1,23 @@
 #!/bin/bash
 
-source $(dirname "$0")/install_base.sh
+CURRENT_DIR=$(dirname "$0")
+ROOT_DIR=$(cd "$CURRENT_DIR/.." && pwd)
 
+# 导入日志模块和检查工具模块
+source $ROOT_DIR/logger.sh
+source $ROOT_DIR/utils/utils.sh
+
+# 导入基础安装脚本
+source $ROOT_DIR/install/install_base.sh
 run_base_install
 
-# 主节点初始化配置
 # 集群状态检查
-check_cluster() {
-    if [ -f /etc/kubernetes/admin.conf ]; then
-        log_warn "检测到已存在的集群配置"
-		exit 0
-    fi
-}
+if [ -f /etc/kubernetes/admin.conf ]; then
+  log_warn "检测到已存在的集群配置"
+	exit 0
+fi
 
 log_info "开始初始化Kubernetes控制平面"
-check_cluster
-
 kubeadm init \
  --apiserver-advertise-address=${apiserver} \
  --image-repository registry.aliyuncs.com/google_containers \
