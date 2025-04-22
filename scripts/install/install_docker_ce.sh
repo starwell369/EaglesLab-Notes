@@ -1,9 +1,12 @@
 #!/bin/bash
 
+CURRENT_DIR=$(dirname "$0")
+ROOT_DIR=$(cd "$CURRENT_DIR/.." && pwd)
+
 # 导入日志模块和检查工具模块
-source $(dirname "$0")/../logger.sh
-source $(dirname "$0")/../uitls/check_utils.sh
-source $(dirname "$0")/../uitls/utils.sh
+source $ROOT_DIR/logger.sh
+source $ROOT_DIR/utils/check_utils.sh
+source $ROOT_DIR/utils/utils.sh
 
 # 主要安装流程
 log_info "开始安装Docker CE"
@@ -19,7 +22,7 @@ if ! check_command "wget"; then
 fi
 
 # 检查Docker是否已安装
-if ! check_docker; then
+if ! docker info; then
     # 添加docker-ce yum源
     log_info "添加docker-ce yum源(中科大)"
     sudo dnf config-manager --add-repo https://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo

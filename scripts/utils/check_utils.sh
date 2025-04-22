@@ -1,7 +1,9 @@
 #!/bin/bash
 
+CURRENT_DIR=$(dirname "$0")
+ROOT_DIR=$(cd "$CURRENT_DIR/.." && pwd)
+
 # 导入日志模块
-ROOT_DIR=$(cd "$(dirname "$0")/.." && pwd)
 source "${ROOT_DIR}/logger.sh"
 
 # 检查命令是否存在
@@ -19,15 +21,6 @@ check_nic() {
         log_error "网卡 $1 不存在"
         exit 1
     fi
-}
-
-# 检查Docker是否已安装
-check_docker() {
-    if ! command -v docker &>/dev/null; then
-        log_warn "Docker已经安装，跳过安装步骤"
-        return 1
-    fi
-    return 0
 }
 
 # 检查文件是否存在
