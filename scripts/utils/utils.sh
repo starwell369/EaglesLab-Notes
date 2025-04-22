@@ -141,3 +141,27 @@ convert_filename_to_image() {
         echo "$basename" | sed 's/-/\//g' | sed 's/__/:/g'
     fi
 }
+
+# 从指定源下载文件
+download_file() {
+    local filename="$1"
+    local sources=(
+        "http://10.3.0.11:8889/pkg"
+        "http://file.eagleslab.com:8889/pkg"
+    )
+    
+    for source in "${sources[@]}"; do
+        local url="${source}/${filename}"
+        log_info "正在尝试从 ${url} 下载文件..."
+        
+        if curl -f -# -o "${filename}" "${url}"; then
+            log_info "文件下载成功: ${filename}"
+            return 0
+        else
+            log_warn "从 ${source} 下载失败，尝试下一个源..."
+        fi
+    done
+    
+    log_error "所有源都下载失败"
+    return 1
+}

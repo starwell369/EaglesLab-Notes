@@ -23,15 +23,6 @@ check_nic() {
     fi
 }
 
-# 检查Docker是否已安装
-check_docker() {
-    if ! command -v docker &>/dev/null; then
-        log_warn "Docker已经安装，跳过安装步骤"
-        return 1
-    fi
-    return 0
-}
-
 # 检查文件是否存在
 check_file() {
     if [ -f "$1" ]; then

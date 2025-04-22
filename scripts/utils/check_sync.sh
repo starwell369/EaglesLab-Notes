@@ -12,7 +12,7 @@ kubectl exec $MASTER_POD -- mysql -uroot -p123456 -e "INSERT INTO app_db.test_ta
 # 在从库检查数据
 kubectl exec $SLAVE_POD -- mysql -uroot -p123456 -e "SELECT * FROM app_db.test_table;" | grep "Auto Test"
 if [ $? -eq 0 ]; then
-  echo "Replication is working!"
+    echo "Replication is working!"
 else
-  echo "Replication failed!"
+    echo "Replication failed!"
 fi

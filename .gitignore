@@ -1,5 +1,7 @@
 # GitBook generated files
+dist/
 _book/
+
 
 # System files
 .DS_Store

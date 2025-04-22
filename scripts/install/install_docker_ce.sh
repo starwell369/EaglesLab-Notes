@@ -8,8 +8,6 @@ source $ROOT_DIR/logger.sh
 source $ROOT_DIR/utils/check_utils.sh
 source $ROOT_DIR/utils/utils.sh
 
-exit 0
-
 # 主要安装流程
 log_info "开始安装Docker CE"
 
@@ -24,7 +22,7 @@ if ! check_command "wget"; then
 fi
 
 # 检查Docker是否已安装
-if ! check_docker; then
+if ! docker info; then
     # 添加docker-ce yum源
     log_info "添加docker-ce yum源(中科大)"
     sudo dnf config-manager --add-repo https://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo
