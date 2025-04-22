@@ -12,7 +12,7 @@ source $ROOT_DIR/install/install_base.sh
 run_base_install
 
 # Check and execute join command
-JOIN_SCRIPT="$(dirname "$0")/join_command.sh"
+JOIN_SCRIPT="${ROOT_DIR}/join_command.sh"
 if [ -f "$JOIN_SCRIPT" ]; then
     log_info "🔄 执行节点加入命令..."
     # Add containerd socket parameter to join command
@@ -26,8 +26,7 @@ if [ -f "$JOIN_SCRIPT" ]; then
         exit 1
     fi
 else
-    log_warning "⚠️ 未找到节点加入命令脚本，请在master节点上执行以下命令生成join_command.sh："
-    log_info "kubeadm token create --print-join-command > join_command.sh"
+    log_warn "⚠️ 控制节点上执行: kubeadm token create --print-join-command"
 fi
 
 log_info "🏁 所有组件安装完成，Kubernetes节点就绪"

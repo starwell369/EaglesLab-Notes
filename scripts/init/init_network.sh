@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 CURRENT_DIR=$(dirname "$0")
 ROOT_DIR=$(cd "$CURRENT_DIR/.." && pwd)
 
@@ -17,7 +16,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 # 定义配置文件路径
-CONFIG_FILE_PATH="$(dirname "$0")/config.conf"
+CONFIG_FILE_PATH="${ROOT_DIR}/config/config.conf"
 
 # 从配置文件读取配置
 if [ -f "$CONFIG_FILE_PATH" ]; then

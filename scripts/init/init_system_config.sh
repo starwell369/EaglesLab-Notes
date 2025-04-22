@@ -8,6 +8,7 @@ source $ROOT_DIR/logger.sh
 source $ROOT_DIR/utils/check_utils.sh
 source $ROOT_DIR/utils/utils.sh
 
+
 # Rocky 系统软件源更换
 if ! grep -q "mirrors.aliyun.com" /etc/yum.repos.d/[Rr]ocky*.repo; then
     log_info "更换 Rocky Linux 软件源为阿里云源"
@@ -15,6 +16,19 @@ if ! grep -q "mirrors.aliyun.com" /etc/yum.repos.d/[Rr]ocky*.repo; then
         -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.aliyun.com/rockylinux|g' \
         -i.bak \
         /etc/yum.repos.d/[Rr]ocky*.repo
+    dnf makecache
+else
+    log_info "已配置阿里云软件源"
+fi
+
+# 配置阿里镜像仓库地址的epel源
+if ! grep -q "mirrors.aliyun.com" /etc/yum.repos.d/epel*.repo; then
+    log_info "更换 epel 软件源为阿里云源"
+    yum install -y https://mirrors.aliyun.com/epel/epel-release-latest-9.noarch.rpm
+    sed -e 's|^#baseurl=https://download.example/pub|baseurl=https://mirrors.aliyun.com|' \
+        -e 's|^metalink|#metalink|'  \
+        -i.bak \
+        /etc/yum.repos.d/epel*
     dnf makecache
 else
     log_info "已配置阿里云软件源"
@@ -83,7 +97,7 @@ cat > /etc/hosts << EOF
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 EOF
-cat /root/hosts >> /etc/hosts
+cat $ROOT_DIR/config/hosts >> /etc/hosts
 
 # 获取当前IP地址并设置主机名
 current_ip=$(get_current_ip)

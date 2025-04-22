@@ -1,15 +1,12 @@
 #!/bin/bash
 
-# 导入日志模块和检查工具模块
-source $(dirname "$0")/logger.sh
-source $(dirname "$0")/check_utils.sh
-source $(dirname "$0")/utils.sh
+CURRENT_DIR=$(dirname "$0")
+ROOT_DIR=$(cd "$CURRENT_DIR/.." && pwd)
 
-# 检查是否提供了压缩包参数
-if [ $# -ne 1 ]; then
-    log_error "用法: $0 <压缩包路径>"
-    exit 1
-fi
+# 导入日志模块和检查工具模块
+source $ROOT_DIR/logger.sh
+source $ROOT_DIR/utils/check_utils.sh
+source $ROOT_DIR/utils/utils.sh
 
 # 检查压缩包是否存在并且可读
 if ! check_archive "$1"; then
@@ -24,13 +21,14 @@ fi
 log_info "开始处理镜像压缩包..."
 
 # 设置解压相关变量
-tmp_name=$(basename $1 .tar.gz)
+base_name="${ROOT_DIR}/images.tar.gz"
+tmp_name=$(basename ${base_name} .tar.gz)
 hash_file="/tmp/.image_archive_hash"
 extract_base_dir="/tmp/$tmp_name-latest"
 extract_dir="$extract_base_dir/$tmp_name"
 
 # 检查压缩包是否需要解压
-check_archive_unchanged "$1" "$hash_file" "$extract_base_dir"
+check_archive_unchanged "$base_name" "$hash_file" "$extract_base_dir"
 case $? in
     0)  # 压缩包未变更，无需解压
         ;;

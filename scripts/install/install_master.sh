@@ -33,13 +33,31 @@ if [ $? -ne 0 ]; then
 fi
 
 # 生成join命令备份
-log_info "保存节点加入命令到/join_command.sh"
-kubeadm token create --print-join-command > ./join_command.sh 2>/dev/null
-chmod 600 ./join_command.sh
+log_info "保存节点加入命令到 ${ROOT_DIR}/join_command.sh"
+kubeadm token create --print-join-command > ${ROOT_DIR}/join_command.sh 2>/dev/null
+chmod 600 ${ROOT_DIR}/join_command.sh
 
 # 配置kubectl访问权限
 mkdir -p $HOME/.kube
 cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 chown $(id -u):$(id -g) $HOME/.kube/config
 
-log_info "主节点初始化完成，节点加入命令已保存至/join_command.sh"
+log_info "主节点初始化完成，节点加入命令已保存至 ${ROOT_DIR}/join_command.sh"
+
+# 安装网络插件calico
+log_info "安装网络插件calico"
+kubectl apply -f  http://file.eagleslab.com:8889/pkg/calico-typha.yaml
+
+# 安装metrics-server
+
+# 检查master01节点Ready
+while true; do
+  STATUS=$(kubectl get nodes -o jsonpath='{.items[?(@.metadata.name=="master01")].status.conditions[?(@.type=="Ready")].status}')
+  if [ "$STATUS" == "True" ]; then
+    log_info "master01节点状态正常"
+    break
+  else
+    log_warn "master01节点状态异常，正在重试..."
+    sleep 5
+  fi
+done

@@ -57,13 +57,14 @@ if [ ! -f "$KUBE_REPO_FILE" ]; then
 fi
 
 # 设置解压相关变量
-tmp_name=$(basename $1 .tar.gz)
+base_name="${ROOT_DIR}/kubernetes-1.29.2-150500.1.1.tar.gz"
+tmp_name=$(basename  ${base_name} .tar.gz)
 hash_file="/tmp/.kubernetes-1.29.2-150500.1.1_archive_hash"
 extract_base_dir="/tmp/$tmp_name-latest"
 extract_dir="$extract_base_dir/$tmp_name"
 
 # 检查压缩包是否需要解压
-check_archive_unchanged "$1" "$hash_file" "$extract_base_dir"
+check_archive_unchanged "$base_name" "$hash_file" "$extract_base_dir"
 case $? in
     0)  # 压缩包未变更，无需解压
         ;;
