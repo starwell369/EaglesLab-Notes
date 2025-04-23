@@ -17,14 +17,10 @@ fi
 # 执行基础安装流程
 run_base_install() {
     cd $ROOT_DIR
-    
-    # 检查并下载必需的文件
-    [ -f images.tar.gz ] || download_file images.tar.gz 
-    [ -f kubernetes-1.29.2-150500.1.1.tar.gz ] || download_file kubernetes-1.29.2-150500.1.1.tar.gz
-    [ -f cri-dockerd-0.3.9.amd64.tgz ] || download_file cri-dockerd-0.3.9.amd64.tgz
-
-    # log_info "正在执行 ▶ 初始化网络配置"
-    # bash init/init_network.sh || { log_error "初始化网络配置失败"; exit 1; }
+    download_file images.tar.gz
+    download_file kubernetes-1.29.2-150500.1.1.tar.gz
+    log_info "正在执行 ▶ 初始化网络配置"
+    bash init/init_network.sh || { log_error "初始化网络配置失败"; exit 1; }
     log_info "正在执行 ▶ 系统参数优化"
     bash init/init_system_config.sh || { log_error "系统参数优化失败"; exit 1; }
     log_info "正在执行 ▶ 安装Docker CE"
