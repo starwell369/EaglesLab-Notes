@@ -1,16 +1,16 @@
 # 云计算的三种模式
 ## 单机到云原生的演变
-![img](01.kubernetes概述/云原生演变.png)
+![img](kubernetes概述/云原生演变.png)
 
 ## IAAS
 Infrastructure as a Service  基础设施即服务
 
-![img](01.kubernetes概述/IAAS.png)
+![img](kubernetes概述/IAAS.png)
 
 ## PAAS
 Platform as a service  平台即服务
 
-![img](01.kubernetes概述/PAAS.png)
+![img](kubernetes概述/PAAS.png)
 
 ## SAAS
 Software as a Service
@@ -43,13 +43,13 @@ kubernetes 这个名字源于希腊于，意为舵手或飞行员。k8s 这个�
   - 容器总数不超过	300000
 - 开源
 
-![img](01.kubernetes概述/kubernetes优势.png)
+![img](kubernetes概述/kubernetes优势.png)
 
 ## kubernetes现状
-![img](01.kubernetes概述/kubernetes现状.png)
+![img](kubernetes概述/kubernetes现状.png)
 
 # kubernetes组件
-![img](01.kubernetes概述/kubernetes集群组件.png)
+![img](kubernetes概述/kubernetes集群组件.png)
 
 一个kubernetes集群由一组被称作节点的机器组成。这些节点上运行Kubernetes所管理的容器化应用。集群具有至少一个工作节点。
 
