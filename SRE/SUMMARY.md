@@ -3,7 +3,7 @@
 - [前言](README.md)
 
 - [Python](Python/Python介绍.md)
-  - [Python基础](Python/Python基础/01.Python环境部署.md)
+  - [Python基础](Python/Python基础/Python环境部署.md)
     - [01.Python环境部署](Python/Python基础/Python环境部署.md)
     - [02.Python基础语法](Python/Python基础/Python基础语法.md)
     - [03.Python数据结构](Python/Python基础/Python数据结构.md)
@@ -34,16 +34,16 @@
     - [02.进程](Python/05.Python并发编程/02.进程.md)
     - [03.线程](Python/05.Python并发编程/03.线程.md)
     - [04.协程](Python/05.Python并发编程/04.协程.md)
-  - [Python-Flask框架](Python/06.Flask框架/01.web框架的本质.md)
-    - [01.web框架的本质](Python/06.Flask框架/01.web框架的本质.md)
-    - [02.URL与视图](Python/06.Flask框架/02.URL与视图.md) -->
+  - [Python-Flask框架](Python/Flask框架/01.web框架的本质.md)
+    - [01.web框架的本质](Python/Flask框架/01.web框架的本质.md)
+    - [02.URL与视图](Python/Flask框架/02.URL与视图.md) -->
 
-- [Linux基础](Linux基础/行业介绍.md)
+- [Linux基础](Linux基础/Linux.md)
   - [01.初识Linux](Linux基础/Linux基础.md)
   - [02.RockyLinux系统安装](Linux基础/RockyLinux系统安装.md)
   - [03.Linux命令行](Linux基础/Linux命令行.md)
   - [04.文件管理](Linux基础/文件管理.md)
-  - [05.文件基本属性与文件查找](Linux基础/文件基本属性与文件查找.md)
+  <!-- - [05.文件基本属性与文件查找](Linux基础/文件基本属性与文件查找.md)
   - [06.用户权限管理](Linux基础/用户权限管理.md)
   - [07.文件权限管理](Linux基础/文件权限管理.md)
   - [08.进程管理](Linux基础/进程管理.md)
@@ -54,7 +54,7 @@
   - [13.Linux网络管理](Linux基础/Linux网络管理.md)
   - [14.防火墙与selinux](Linux基础/防火墙与selinux.md)
   - [15.计划任务与日志](Linux基础/计划任务与日志.md)
-  - [16.管道与重定向](Linux基础/管道与重定向.md)
+  - [16.管道与重定向](Linux基础/管道与重定向.md) -->
 
 - [Linux服务](Linux服务/01.SSH远程管理协议.md)
 
@@ -72,8 +72,8 @@
   - [11.Docker容器编排](Docker/11.Docker容器编排.md)
   - [12.Docker存储引擎](Docker/12.Docker存储引擎.md)
 
-- [Kubernetes](Kubernetes/01.kubernetes概述.md)
-  - [01.Kubernetes概述](Kubernetes/01.kubernetes概述.md)
+- [Kubernetes](Kubernetes/kubernetes.md)
+  - [01.Kubernetes概述](Kubernetes/kubernetes概述.md)
   - [02.安装手册](Kubernetes/02.安装手册.md)
   - [03.Pod与网络](Kubernetes/03.Pod与网络.md)
   - [04.资源清单](Kubernetes/04.资源清单.md)
