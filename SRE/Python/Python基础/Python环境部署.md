@@ -148,34 +148,6 @@ Python 可用的编辑器有很多，因为编辑器只负责编写代码，实�
 
 对于 Python 而言，最出名，最好用的编辑器就是 Pycharm 。我们后续学习也主要使用 Pycharm 编辑器。
 
-### 其他编辑器
-
-**以下仅作为了解即可...**
-
-1. **vim 编辑器**
-
-Vim（Vi IMproved）是一个高度可配置的文本编辑器，它源自于一个名为 Vi 的早期 Unix 编辑器。Vim 的设计目标是提供一种高效的方式来编辑文本文件，它广泛应用于程序员和系统管理员中，因为它支持多种编程语言的语法高亮、代码补全、编译和错误跳转等功能。
-
-Vim 是一个主要基于命令行的编辑器，几乎所有的操作，如：复制、粘贴、删除等待，都需要通过指令来完成。所以说使用难度相对较高，我们后面的云计算部分会深入学习...
-
-2. **Sublim Text**
-
-Sublime Text 是一个代码编辑器（Sublime Text 2 是收费软件，但可以无限期试用）
-
-Sublime Text 是由程序员 Jon Skinner 于 2008 年 1 月份所开发出来，它最初被设计为一个具有丰富扩展功能的 Vim。
-
-Sublime Text 具有漂亮的用户界面和强大的功能，例如代码缩略图，Python 的插件，代码段等。
-
-还可自定义键绑定，菜单和工具栏。Sublime Text 的主要功能包括：拼写检查，书签，完整的 Python API ， Goto 功能，即时项目切换，多选择，多窗口等等。
-
-Sublime Text 是一个跨平台的编辑器，同时支持 Windows、Linux、Mac OS X 等操作系统。
-
-下载地址：http://www.sublimetext.com/3
-
-<img src="Python环境部署/Python编辑器-SublimeTexT下载.png" alt="img-Python编辑器-SublimeTexT下载" style="zoom: 80%;" />
-
-<img src="Python环境部署/Python编辑器-SublimeText使用.png" alt="img-Python编辑器-SublimeText使用" style="zoom:80%;" />
-
 ### Pycharm
 
 下载地址：http://www.jetbrains.com/pycharm/download/#section=windows
@@ -192,7 +164,7 @@ Sublime Text 是一个跨平台的编辑器，同时支持 Windows、Linux、Mac
 
 <img src="Python环境部署/Python编辑器-PyCharm激活.png" alt="img-Python编辑器-PyCharm激活" style="zoom:80%;" />
 
-## 创建第一个项目
+**创建第一个项目**
 
 1. 点击New Project来创建一个项目，项目Name和Location可以自定义
 
@@ -220,8 +192,5 @@ hello world
 Process finished with exit code 0
 ```
 
-## Pycharm 优化
-1. 中文支持
-2. 字体大小调节
-3. 主题更改
-……
+### Vscode
+是一款由微软开发且跨平台的免费源代码编辑器。该软件以扩展的方式支持语法高亮、代码自动补全、代码重构功能，并且内置了命令行工具和 Git 版本控制系统。
