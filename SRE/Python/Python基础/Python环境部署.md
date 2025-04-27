@@ -1,33 +1,33 @@
-# Python介绍
+# Python 介绍
 
-> Life is short, I need python（人生苦短，我用python！）
+> Life is short, I need python（人生苦短，我用 python ！）
 
-## Python起源
+## Python 起源
 
-Python的作者是著名的"**龟叔**"Guido van Rossum(吉多.范罗苏姆)，1989年，龟叔为了打发无聊的圣诞节，决心开发一个新的**解释程序**，作为ABC语言的一种继承。于是便开始编写Python语言。
+Python 的作者是著名的"**龟叔**" Guido van Rossum （吉多.范罗苏姆），1989 年，龟叔为了打发无聊的圣诞节，决心开发一个新的**解释程序**，作为 ABC 的一种继承。于是便开始编写 Python。
 
-<img src="Python环境部署/龟叔.png" alt="image-20240902103540169" style="zoom: 80%;" />
+<img src="Python环境部署/龟叔.png" alt="img-龟叔" style="zoom: 80%;" />
 
-**ABC**是由吉多参加设计的一种教学语言，就吉多本人看来，ABC这种语言非常优美和强大，是**专门为非专业程序员设计的**。但是ABC语言并没有成功。**Guido**本人看来，**ABC**失败的原因是高级语言为时过早，并且平台迁移能力弱，难以添加新功能，仅仅专注于编程初学者，没有把有经验的编程人员纳入其中，在**Python**中解决了这些问题，让拓展模块的编写非常容易，并且可以在多平台进行运行....
+**ABC** 是由吉多参加设计的一种教学语言，就吉多本人看来，ABC 这种语言非常优美和强大，是**专门为非专业程序员设计的**。但是 ABC 并没有成功。**Guido** 本人看来，**ABC** 失败的原因是高级语言为时过早，并且平台迁移能力弱，难以添加新功能，仅仅专注于编程初学者，没有把有经验的编程人员纳入其中，在 **Python** 中解决了这些问题，让拓展模块的编写非常容易，并且可以在多平台进行运行....
 
-Python的意思是蟒蛇，是取自英国20世纪70年代首播的电视喜剧《蒙提.派森干的飞行马戏团》(Monty Python’s Flying Circus)，Guido非常喜欢这个剧，所以选择Python作为新语言的名字。
+Python 的意思是蟒蛇，是取自英国 20 世纪 70 年代首播的电视喜剧《蒙提.派森干的飞行马戏团》(Monty Python’s Flying Circus)，Guido 非常喜欢这个剧，所以选择 Python 作为新语言的名字。
 
-**1991年**，第一个Python编译器诞生。它是用C语言实现的，并能够调用C语言的库文件。
+1991 年，第一个 Python 编译器诞生。它是用 C 语言实现的，并能够调用 C 语言的库文件。
 
 ## 解释型和编译型语言
 
 解释型语言是指在运行时由解释器逐行读取和执行源代码的语言。在这种语言中，代码不需要被提前编译成机器代码，而是直接由解释器逐行解析并执行。这使得开发过程更加灵活，程序员可以快速测试和修改代码。Python、JavaScript 和 Ruby 等都是常见的解释型语言。尽管解释型语言在开发时提供了便利，但由于逐行解释执行，通常在性能上不如编译型语言。
 
-编译型语言则是指在执行之前，源代码需要通过编译器转换成机器代码或中间代码。这个过程通常会产生一个独立的可执行文件，运行时不再需要源代码或编译器。这种做法通常能提高程序的执行效率，因为编译后的代码可以直接在机器上运行。C、C++ 和 Go 等语言都是编译型语言。虽然编译型语言在执行速度上表现出色，但编译过程通常较长，调试和修改代码时也不如解释型语言方便
+编译型语言则是指在执行之前，源代码需要通过编译器转换成机器代码或中间代码。这个过程通常会产生一个独立的可执行文件，运行时不再需要源代码或编译器。这种做法通常能提高程序的执行效率，因为编译后的代码可以直接在机器上运行。C、C++ 和 Go 等语言都是编译型语言。虽然编译型语言在执行速度上表现出色，但编译过程通常较长，调试和修改代码时也不如解释型语言方便。
 
 ## 编程语言排行
 
 - [TIOBE Index](https://www.tiobe.com/tiobe-index/)
 - [PYPL Index](https://pypl.github.io/PYPL.html)
 
-<img src="Python环境部署/编程语言排行.png" alt="image-20240920215125704" style="zoom:80%;" />
+<img src="Python环境部署/编程语言排行.png" alt="img-编程语言排行" style="zoom:80%;" />
 
-## Python应用领域
+## Python 应用领域
 
 **人工智能** 
 
@@ -65,7 +65,7 @@ Python 也可以用于开发桌面应用程序，以下是几种常用的图形�
 - **WxPython**：基于 wxWidgets 的 Python GUI 库，提供了跨平台的原生控件。
 - **TkInter**：Python 的标准 GUI 库，适合初学者和轻量级应用的快速开发。
 
-## Python实际应用
+## Python 实际应用
 
 **谷歌**：Google App Engine、code.google.com、Google Earth、谷歌爬虫、Google 广告等项目都在大量使用 Python 开发。
 
@@ -89,9 +89,9 @@ Python 也可以用于开发桌面应用程序，以下是几种常用的图形�
 
 除上面之外，还有搜狐、金山、腾讯、盛大、网易、百度、阿里、淘宝、土豆、新浪、果壳等公司都在使用 Python 完成各种各样的任务
 
-## Python设计哲学
+## Python 设计哲学
 
-<img src="Python环境部署/Python设计哲学.png" alt="image-20240902110217569" style="zoom:80%;" />
+<img src="Python环境部署/Python设计哲学.png" alt="img-Python设计哲学" style="zoom:80%;" />
 
 Python 的设计哲学与其他编程语言相比，有几个显著的不同之处：
 
@@ -108,32 +108,32 @@ Python 的设计哲学与其他编程语言相比，有几个显著的不同之�
 6. **社区和文化**：
    - Python 拥有一个积极的社区，强调开放和共享，鼓励用户贡献代码和文档，而其他语言的社区文化可能更加保守或封闭。
 
-# Python环境部署
+# Python 环境部署
 
-## Python解释器
+## Python 解释器
 
 - 打开官网：https://www.python.org/downloads
-- 找到对应的版本，这里选择版本3.9.8
+- 找到对应的版本，这里选择版本 `3.9.8`
 
-**3.9.8版本**下载链接：https://www.python.org/ftp/python/3.9.8/python-3.9.8-amd64.exe
+**3.9.8 版本**下载链接：https://www.python.org/ftp/python/3.9.8/python-3.9.8-amd64.exe
 
-<img src="Python环境部署/Python解释器下载1.png" alt="image-20240902111134272" style="zoom:80%;" />
+<img src="Python环境部署/Python解释器下载1.png" alt="img-Python解释器下载1" style="zoom:80%;" />
 
-<img src="Python环境部署/Python解释器下载2.png" alt="image-20240902111545070" style="zoom:80%;" />
+<img src="Python环境部署/Python解释器下载2.png" alt="img-Python解释器下载2" style="zoom:80%;" />
 
 打开安装包，添加环境变量，可以选择默认安装或者自定义安装（一般自定义安装主要是修改安装路径）
 
-<img src="Python环境部署/Python解释器安装1.png" alt="image-20240902112236819" style="zoom:80%;" />
+<img src="Python环境部署/Python解释器安装1.png" alt="img-Python解释器安装1" style="zoom:80%;" />
 
-<img src="Python环境部署/Python解释器安装2.png" alt="image-20240902142136568" style="zoom:80%;" />
+<img src="Python环境部署/Python解释器安装2.png" alt="img-Python解释器安装2" style="zoom:80%;" />
 
-**注意**：必须勾选上下面的"Add Python 3.9 to PATH"(添加到系统环境变量中)
+**注意**：必须勾选上下面的 “Add Python 3.9 to PATH”（添加到系统环境变量中）
 
 **测试是否安装成功**
 
-在键盘上按下`win+R`然后在左下弹出窗口中输入`cmd`回车
+在键盘上按下 `win+R` 然后在左下弹出窗口中输入 `cmd` 回车
 
-在cmd终端中输入python，如果可以看到如下内容，说明python环境安装成功，并且请核对版本号是否与我们安装的一致....
+在 cmd 终端中输入 python，如果可以看到如下内容，说明 python 环境安装成功，并且请核对版本号是否与我们安装的一致……
 
 ```bash
 C:\Users\test>python
@@ -142,75 +142,75 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-## Python编辑器
+## Python 编辑器
 
-Python可用的编辑器有很多，因为编辑器只负责编写代码，实际的代码执行还是由我们刚刚安装的解释器进行编译解释。所以编写Python代码对编辑器的要求不是很高。不过，为了便于我们敲代码，我们还是要选择一些更加高级，功能更多的编辑器来使用。这样在编写代码的时候可以事半功倍
+Python 可用的编辑器有很多，因为编辑器只负责编写代码，实际的代码执行还是由我们刚刚安装的解释器进行编译解释。所以编写Python 代码对编辑器的要求不是很高。不过为了便于我们敲代码，我们还是要选择一些更加高级，功能更多的编辑器来使用。这样在编写代码的时候可以事半功倍
 
-对于Python而言，最出名，最好用的编辑器就是pycharm了。我们后续学习也主要使用pycharm编辑器。
+对于 Python 而言，最出名，最好用的编辑器就是 Pycharm 。我们后续学习也主要使用 Pycharm 编辑器。
 
 ### 其他编辑器
 
 **以下仅作为了解即可...**
 
-1. **vim编辑器**
+1. **vim 编辑器**
 
-Vim（Vi IMproved）是一个高度可配置的文本编辑器，它源自于一个名为Vi的早期Unix编辑器。Vim的设计目标是提供一种高效的方式来编辑文本文件，它广泛应用于程序员和系统管理员中，因为它支持多种编程语言的语法高亮、代码补全、编译和错误跳转等功能。
+Vim（Vi IMproved）是一个高度可配置的文本编辑器，它源自于一个名为 Vi 的早期 Unix 编辑器。Vim 的设计目标是提供一种高效的方式来编辑文本文件，它广泛应用于程序员和系统管理员中，因为它支持多种编程语言的语法高亮、代码补全、编译和错误跳转等功能。
 
-Vim是一个主要基于命令行的编辑器，几乎所有的操作，如：复制、粘贴、删除等待，都需要通过指令来完成。所以说使用难度相对较高，我们后面的云计算部分会深入学习...
+Vim 是一个主要基于命令行的编辑器，几乎所有的操作，如：复制、粘贴、删除等待，都需要通过指令来完成。所以说使用难度相对较高，我们后面的云计算部分会深入学习...
 
 2. **Sublim Text**
 
-Sublime Text 是一个代码编辑器（Sublime Text 2是收费软件，但可以无限期试用）
+Sublime Text 是一个代码编辑器（Sublime Text 2 是收费软件，但可以无限期试用）
 
-Sublime Text是由程序员Jon Skinner于2008年1月份所开发出来，它最初被设计为一个具有丰富扩展功能的Vim。
+Sublime Text 是由程序员 Jon Skinner 于 2008 年 1 月份所开发出来，它最初被设计为一个具有丰富扩展功能的 Vim。
 
-Sublime Text具有漂亮的用户界面和强大的功能，例如代码缩略图，Python的插件，代码段等。
+Sublime Text 具有漂亮的用户界面和强大的功能，例如代码缩略图，Python 的插件，代码段等。
 
 还可自定义键绑定，菜单和工具栏。Sublime Text 的主要功能包括：拼写检查，书签，完整的 Python API ， Goto 功能，即时项目切换，多选择，多窗口等等。
 
-Sublime Text 是一个跨平台的编辑器，同时支持Windows、Linux、Mac OS X等操作系统。
+Sublime Text 是一个跨平台的编辑器，同时支持 Windows、Linux、Mac OS X 等操作系统。
 
 下载地址：http://www.sublimetext.com/3
 
-<img src="Python环境部署/Python编辑器-SublimeTexT下载.png" alt="image-20240904101732444" style="zoom: 80%;" />
+<img src="Python环境部署/Python编辑器-SublimeTexT下载.png" alt="img-Python编辑器-SublimeTexT下载" style="zoom: 80%;" />
 
-<img src="Python环境部署/Python编辑器-SublimeText使用.png" alt="image-20240902143634827" style="zoom:80%;" />
+<img src="Python环境部署/Python编辑器-SublimeText使用.png" alt="img-Python编辑器-SublimeText使用" style="zoom:80%;" />
 
-### Pycharm的安装
+### Pycharm
 
 下载地址：http://www.jetbrains.com/pycharm/download/#section=windows
 
-因为社区版可能会缺少部分功能，所以直接选择专业版
+因为社区版可能会缺少部分功能，所以直接选择专业版。
 
-**安装过程：**
+**安装过程**：
 
 1. 下载安装包并且安装
-2. 使用Eagleslab提供的补丁工具进行激活
-3. 查看设置-->About
+2. 使用 EaglesLab 提供的补丁工具进行激活
+3. 查看设置 -> `About`
 
 **上述操作环节较多，认真观看老师的操作~**
 
-<img src="Python环境部署/Python编辑器-PyCharm激活.png" alt="image-20240902145526575" style="zoom:80%;" />
+<img src="Python环境部署/Python编辑器-PyCharm激活.png" alt="img-Python编辑器-PyCharm激活" style="zoom:80%;" />
 
 ## 创建第一个项目
 
 1. 点击New Project来创建一个项目，项目Name和Location可以自定义
 
-<img src="Python环境部署/新建项目.png" alt="image-20240902145711220" style="zoom:80%;" />
+<img src="Python环境部署/新建项目.png" alt="img-新建项目" style="zoom:80%;" />
 
-1. 在项目名称上右键来创建一个Python File
+2. 在项目名称上右键来创建一个Python File
 
-<img src="Python环境部署/新建文件.png" alt="image-20240902145939086" style="zoom: 80%;" />
+<img src="Python环境部署/新建文件.png" alt="img-新建文件" style="zoom: 80%;" />
 
-1. 编写第一个Python代码
+3. 编写第一个 Python 代码
 
 ```python
 print('Hello World!')
 ```
 
-然后右键->Run demo.py来运行
+然后右键 -> `Run demo.py` 来运行
 
-<img src="Python环境部署/运行文件.png" alt="image-20240902150205122" style="zoom:80%;" />
+<img src="Python环境部署/运行文件.png" alt="img-运行文件" style="zoom:80%;" />
 
 ```bash
 # Output
@@ -220,10 +220,8 @@ hello world
 Process finished with exit code 0
 ```
 
-## Pycharm优化
-
+## Pycharm 优化
 1. 中文支持
 2. 字体大小调节
 3. 主题更改
-
-......
+……
