@@ -2,23 +2,27 @@
 
 - [前言](README.md)
 
+- [基础知识]()
+  - [网络]
+  - [操作系统]
+  - [组成原理]
+  - [数据结构]
+
 - [Python](Python/Python介绍.md)
   - [Python基础](Python/Python基础/Python环境部署.md)
     - [01.Python环境部署](Python/Python基础/Python环境部署.md)
     - [02.Python基础语法](Python/Python基础/Python基础语法.md)
     - [03.Python数据结构](Python/Python基础/Python数据结构.md)
     - [04.Python文件操作](Python/Python基础/Python文件操作.md)
-  <!-- - [Python面向函数](Python/02.Python面向函数/01.认识函数.md)
-    - [01.认识函数](Python/02.Python面向函数/01.认识函数.md)
-    - [02.装饰器函数](Python/02.Python面向函数/02.装饰器函数.md)
-    - [03.迭代器与生成器](Python/02.Python面向函数/03.迭代器与生成器.md)
-    - [04.Python推导式](Python/02.Python面向函数/04.Python推导式.md)
-    - [05.内置函数和匿名函数](Python/02.Python面向函数/05.内置函数与匿名函数.md)
-    - [06.初识算法](Python/02.Python面向函数/06.初识算法.md)
-    - [07.模块和包](Python/02.Python面向函数/07.模块和包.md)
-    - [08.常用模块](Python/02.Python面向函数/08.常用模块.md)
-    - [09.异常处理](Python/02.Python面向函数/09.异常处理.md)
-    - [10.垃圾回收机制](Python/02.Python面向函数/10.Python垃圾回收机制.md)
+  - [Python面向函数](Python/Python面向函数/认识函数.md)
+    - [01.认识函数](Python/Python面向函数/认识函数.md)
+    - [02.装饰器函数](Python/Python面向函数/装饰器函数.md)
+    - [03.迭代器与生成器](Python/Python面向函数/迭代器与生成器.md)
+    - [04.Python推导式](Python/Python面向函数/Python推导式.md)
+    - [05.内置函数和匿名函数](Python/Python面向函数/内置函数与匿名函数.md)
+    - [06.模块和包](Python/Python面向函数/模块和包.md)
+    - [07.常用模块](Python/Python面向函数/常用模块.md)
+    - [08.异常处理](Python/Python面向函数/异常处理.md)
   - [Python面向对象](Python/03.Python面向对象/01.初识面向对象.md)
     - [01.初识面向对象](Python/03.Python面向对象/01.初识面向对象.md)
     - [02.封装](Python/03.Python面向对象/02.封装.md)
@@ -36,7 +40,10 @@
     - [04.协程](Python/05.Python并发编程/04.协程.md)
   - [Python-Flask框架](Python/Flask框架/01.web框架的本质.md)
     - [01.web框架的本质](Python/Flask框架/01.web框架的本质.md)
-    - [02.URL与视图](Python/Flask框架/02.URL与视图.md) -->
+    - [02.URL与视图](Python/Flask框架/02.URL与视图.md)
+  - [扩展知识](Python/Python面向函数/Python垃圾回收机制.md)
+    - [01.垃圾回收机制](Python/Python面向函数/Python垃圾回收机制.md)
+    - [02.初识算法](Python/Python面向函数/06.初识算法.md)
 
 - [Linux基础](Linux基础/Linux.md)
   - [01.初识Linux](Linux基础/Linux基础.md)
