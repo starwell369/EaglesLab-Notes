@@ -1,6 +1,6 @@
 RockyLinux系统在企业中一般是安装在服务器上的，但是我们学习的时候买台服务器并不方便，所以我们可以将其安装在虚拟机中(实际上很多企业也这么做)
 
-# vmware workstation软件安装
+# vmware workstation 软件安装
 
 **双击安装包**
 
@@ -24,7 +24,7 @@ RockyLinux系统在企业中一般是安装在服务器上的，但是我们学�
 
 ![img-WorkstationPro安装向导7](Linux系统安装/WorkstationPro安装向导7.png)
 
-# 创建RockyLinux虚拟机
+# 创建 RockyLinux 虚拟机
 
 **新建虚拟机**
 
@@ -68,7 +68,7 @@ RockyLinux系统在企业中一般是安装在服务器上的，但是我们学�
 
 
 
-# 安装RockyLinux系统
+# 安装 RockyLinux 系统
 
 1. 点击开启此虚拟机
 
@@ -98,7 +98,7 @@ RockyLinux系统在企业中一般是安装在服务器上的，但是我们学�
 
 <img src="Linux系统安装/安装RL系统-网络连接.png" alt="img-安装RL系统-网络连接" style="zoom:80%;" />
 
-8. 设置root密码，为了方便操作，我们统一设置为`2`,然后点击两次完成：
+8. 设置 root 密码，为了方便操作，我们统一设置为`2`,然后点击两次完成：
 
 <img src="Linux系统安装/安装RL系统-设置密码.png" alt="img-安装RL系统-设置密码" style="zoom:80%;" />
 
@@ -110,9 +110,9 @@ RockyLinux系统在企业中一般是安装在服务器上的，但是我们学�
 
 <img src="Linux系统安装/安装RL系统-重启系统.png" alt="img-安装RL系统-重启系统" style="zoom:80%;" />
 
-# RockyLinux系统使用
+# RockyLinux 系统使用
 
-重启之后就进入RockyLinux系统的界面，没有图形化，只有黑框框。然后我们先输入用户名`root`回车以后，在输入我们设置的密码`2`。但是输入密码的时候，是没有任何显示的，这是命令行为了保护密码的安全故意为之，我们我们输入了密码以后这直接回车即可进入系统。
+重启之后就进入 RockyLinux 系统的界面，没有图形化，只有黑框框。然后我们先输入用户名`root`回车以后，在输入我们设置的密码`2`。但是输入密码的时候，是没有任何显示的，这是命令行为了保护密码的安全故意为之，我们我们输入了密码以后这直接回车即可进入系统。
 
 <img src="Linux系统安装/RL系统使用1.png" alt="img-RL系统使用1" style="zoom:80%;" />
 
@@ -152,11 +152,11 @@ poweroff
 
 <img src="Linux系统安装/虚拟机快照3.png" alt="img-虚拟机快照3" style="zoom:80%;" />
 
-# 远程管理Linux服务器
+# 远程管理 Linux 服务器
 
-大多数情况下Linux服务器都是安装在数据中心机房的机柜里面的，大家可以把数据中心理解为大仓库，那么机柜就是一个个货架，而管理人员都是坐在办公室当中，通过电脑远程连接服务器进行管理，所以我们在后续学习的时候，为了方便，全部使用远程连接。
+大多数情况下 Linux 服务器都是安装在数据中心机房的机柜里面的，大家可以把数据中心理解为大仓库，那么机柜就是一个个货架，而管理人员都是坐在办公室当中，通过电脑远程连接服务器进行管理，所以我们在后续学习的时候，为了方便，全部使用远程连接。
 
-Linux远程连接命令行工具有很多:
+Linux 远程连接命令行工具有很多:
 
 - xshell
   - 收费工具，有免费版，基本能满足需求，目前比较主流
@@ -165,13 +165,13 @@ Linux远程连接命令行工具有很多:
 - MobaXterm
   - 免费工具，功能比较齐全，本次课程中推荐使用
 
-首先查看虚拟机的IP地址，也就是Linux服务器的IP地址，登录进虚拟机之后输入`ip address`可以查看
+首先查看虚拟机的IP地址，也就是 Linux 服务器的 IP 地址，登录进虚拟机之后输入`ip address`可以查看
 
 <img src="Linux系统安装/远程管理1.png" alt="img-远程管理1" style="zoom:80%;" />
 
-这边可以看到本次安装的RockyLinux操作系统获取到的IP地址是 `192.168.88.103` 每个人装的虚拟机获取的IP地址可能是不一样的，需要仔细看清楚。
+这边可以看到本次安装的 RockyLinux 操作系统获取到的IP地址是 `192.168.88.103` 每个人装的虚拟机获取的 IP 地址可能是不一样的，需要仔细看清楚。
 
-在连接之前，我们需要在RockyLinux上设置一下，让它允许通过root用户远程连接进来，大家先照着做，后面我们都会详细学到
+在连接之前，我们需要在 RockyLinux 上设置一下，让它允许通过 root 用户远程连接进来，大家先照着做，后面我们都会详细学到
 
 ```shell
 [root@localhost ~]# echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
@@ -180,7 +180,7 @@ Linux远程连接命令行工具有很多:
 
 ## MobaXterm
 
-解压之前下载的MobaXterm压缩包，双击程序运行
+解压之前下载的 MobaXterm 压缩包，双击程序运行
 
 ![img-MobaXterm-安装](Linux系统安装/MobaXterm-安装.png)
 
@@ -194,6 +194,6 @@ Linux远程连接命令行工具有很多:
 
 <img src="Linux系统安装/MobaXterm-登录成功.png" alt="img-MobaXterm-登录成功" style="zoom:80%;" />
 
-MobaXterm工具只是用来远程连接和管理我们的RockyLinux虚拟机，所以在使用的时候，我们必须先启动RockyLinux虚拟机。然后再次使用MobaXterm工具连接上来。并且我们在MobaXterm上面执行的命令，也都会被传递到我们的RockyLinux上面执行。
+MobaXterm 工具只是用来远程连接和管理我们的 RockyLinux 虚拟机，所以在使用的时候，我们必须先启动RockyLinux 虚拟机。然后再次使用 MobaXterm 工具连接上来。并且我们在 MobaXterm 上面执行的命令，也都会被传递到我们的 RockyLinux 上面执行。
 
 ![img-MobaXterm-执行命令](Linux系统安装/MobaXterm-执行命令.png)
