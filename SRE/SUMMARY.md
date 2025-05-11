@@ -52,7 +52,7 @@
   - [02.RockyLinux系统安装](Linux基础/RockyLinux系统安装.md)
   - [03.Linux命令行](Linux基础/Linux命令行.md)
   - [04.文件管理](Linux基础/文件管理.md)
-  <!-- - [05.文件基本属性与文件查找](Linux基础/文件基本属性与文件查找.md)
+  - [05.文件基本属性与文件查找](Linux基础/文件基本属性与文件查找.md)
   - [06.用户权限管理](Linux基础/用户权限管理.md)
   - [07.文件权限管理](Linux基础/文件权限管理.md)
   - [08.进程管理](Linux基础/进程管理.md)
@@ -63,7 +63,7 @@
   - [13.Linux网络管理](Linux基础/Linux网络管理.md)
   - [14.防火墙与selinux](Linux基础/防火墙与selinux.md)
   - [15.计划任务与日志](Linux基础/计划任务与日志.md)
-  - [16.管道与重定向](Linux基础/管道与重定向.md) -->
+  - [16.管道与重定向](Linux基础/管道与重定向.md)
 
 - [Linux服务](Linux服务/01.SSH远程管理协议.md)
 
