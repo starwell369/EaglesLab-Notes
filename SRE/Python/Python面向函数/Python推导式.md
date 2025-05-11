@@ -3,10 +3,8 @@
 ## 列表推导式
 
 列表推导式主要是用于按照我们指定的内容填充，生成一个新的列表，基本语法如下：
+> new_list = [ expression for item in iterable if condition ]
 
-```python
-new_list = [expression for item in iterable if condition]
-```
 
 ### 示例
 
@@ -131,8 +129,6 @@ print(dic2)
 gen_expr = (x ** 2 for x in range(5))
 print(gen_expr)  
 
-# Output: 
-<generator object <genexpr> at 0x...>
 ```
 
 **手动迭代：**
